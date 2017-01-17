@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quizApp">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizApp</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="ImI44bqEjYjxjNPoLWFWVKzQwK37eYf1Mx2YnwdJm4I" />
+    <meta name="keyword" content="angular, angular quiz app, Mean Stack Quiz">
+    <meta name="Description" content="Simple mean stack quiz application using nodejs angular material design bootstrap typescript">
+
+   
+    <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+
+
+<!-- favicon -->
+<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+ -->
+
+<link rel="stylesheet" href="assets/style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- animate.css -->
+<link rel="stylesheet" href="assets/animate/animate.css" />
+<link rel="stylesheet" href="assets/animate/set.css" />
+
+<!-- gallery -->
+<link rel="stylesheet" href="assets/gallery/blueimp-gallery.min.css">
+
+        <!--Including boot strap CDN-->
+    <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!--Closing boot strap CDN-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+       <link href="./stylesheet/style.css" rel="stylesheet">
+
+
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./node_modules/angular-material/angular-material.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./node_modules/checklist-model/checklist-model.js"></script>
+
+                   <!--<script src="./script/jssor.slider.mini.js"></script>    
+        <script src="./script/docs.min.js"></script>
+    <script src="./script/ie10-viewport-bug-workaround.js"></script>        -->
+
+
+    <script src="./script/script.js"></script>
+    <script src="./script/config.js"></script>
+
+    <!--<script src="./script/jqueryfile.js"></script>-->
+    <script src="./components/home/home.js"></script>
+    <script src="./components/login/login.js"></script>
+    <script src="./components/signup/signup.js"></script>
+    <script src="./components/addQuestion/addQuestion.js"></script>
+    <script src="./components/getQuestion/getquestion.js"></script>
+    <script src="./components/dashboard/dash.js"></script>
+    <script src="./components/userprofile/userprofile.js"></script>
+    <script src="./components/about/about.js"></script>
+        <script src="./components/contact/contact.js"></script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78729811-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+    
+</head>
+<body ng-controller="quizCtrl">
+    
+        <!-- NAVBAR
+    ================================================== -->
+<!-- </br> -->
+<!-- <div class="topbar animated fadeInLeftBig"></div>
+
+    <div class="container">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                     <a class="navbar-brand" href="#home"><img src="img/home/logo4.png" alt="logo" style="width: 230px; height: 50px;"></a>
+                    <!-- <a class="navbar-brand" href="#">TeamSix Quiz</a> -->
+                <!-- </div> -->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a ui-sref="getquestion">Get Quiz Online</a></li>
+                        <li><a ui-sref="dashboard">Admin Dashboard</a></li>
+                        <!--<li><a ui-sref="#">Tutorials</a></li>-->
+                        <!--<li><a ui-sref="userprofile">My Profile</a></li>-->
+                        <li><a ui-sref="aboutus">About</a></li>
+                        <li><a ui-sref="contact">Contact</a></li>
+
+
+                    </ul>
+                    <!-- <div ng-show="!isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ui-sref="signin">Sign in</md-button> 
+                    </div>
+                     <div ng-show="isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ng-click="signOut()">Sign Out</md-button> 
+                    </div>
+                </div> -->
+
+            </div>
+
+        </nav>
+</div> 
+    <div class="topbar animated fadeInLeftBig"></div>
+
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+              <a class="navbar-brand" href="#home"><img src="img/home/logo4.png" alt="logo" style="width: 230px; height: 50px;"></a>
+              <!-- #Logo Ends -->
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right scroll">
+                 <!-- <li class="active"><a href="/">Home</a></li> -->
+                 <li><a href="/">Home</a></li>
+                     <li><a ui-sref="getquestion">Get Quiz Online</a></li>
+                 <!-- <li ><a href="#about">About</a></li> -->
+                 <!-- <li ><a href="#partners">Admin Dashboard</a></li> -->
+                 <li><a ui-sref="dashboard">Admin Dashboard</a></li>
+                 <li><a ui-sref="aboutus">About</a></li>
+                <li><a ui-sref="contact">Contact</a></li>
+                 <!-- <li><a ui-sref="aboutus">About</a></li> -->
+                 <!-- <li ><a href="#contact">Contact</a></li>-->
+                 <div ng-show="!isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ui-sref="signin">Sign in</md-button> 
+                    </div>
+                     <div ng-show="isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ng-click="signOut()">Sign Out</md-button> 
+                </div>
+            </div>
+              </ul>
+              
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    
+    <ui-view></ui-view>
+    
+              
+</body>
+
+ <div class="container marketing"> 
+           <hr class="featurette-divider">
+
+
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+       <footer>
+          <div layout='row' layout-align="start end">
+            <p>&copy; TeamSix {{myDate | date: 'yyyy'}}. &middot; </p>
+        </footer>
+               </div>
+               </div>
+</html>
